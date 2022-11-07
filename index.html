@@ -8,24 +8,20 @@
 </head>
 <body>
     <script>
-       let age = prompt('How old are you?');
-       let check = Number.isInteger(+age);
+       let age = prompt('Сколько вам лет?');
        let result;
-       if (check && age > 0) {
-            let last = age.slice(-1);   
-            if (last == 1) {
+       if (age > 0 && age % 1 == 0) {
+            if (age % 10 == 1 && age != 11 && age % 100 != 11) {
                 result = age + ' год';
-            } else {
-                if (last < 5) {
-                    result = age + ' года';
-                } else {
-                    result = age + ' лет';
-                } 
+            } else if (age % 10 > 1 && age % 10 <= 4 && age % 100 != 12 && age % 100 != 13 && age % 100 != 14) {
+                result = age + ' года';       
+            } else {              
+                result = age + ' лет';  
             }
-        } else {
-            result = 'Не правильные данные';
-        }
-       alert(result);
+      } else {
+          result = 'Не правильные данные';
+      }
+      alert(result);
     </script> 
 </body>
 </html>
